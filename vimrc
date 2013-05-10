@@ -7,7 +7,7 @@ set nocompatible
 
 set nu " line numbers
 set lbr " line breaking - line wraps
-set guifont=Inconsolata\ Medium\ 12 " font
+set guifont=Inconsolata\ Medium\ 14 " font
 set mouse=a " pointer support
 set scrolloff=3 " set number of line to show
 set cursorline
@@ -36,7 +36,7 @@ endif
 let g:Powerline_symbols = 'fancy'
 
 "let me copy/paste from any vim instance to any other app
-set clipboard=unnamed
+"set clipboard=unnamed
 
 "UTF-8 everywhere
 set fileencoding=utf-8
