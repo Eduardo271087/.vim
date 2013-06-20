@@ -79,7 +79,7 @@ nnoremap <down> gj
 inoremap <up> <C-O>gk
 inoremap <down> <C-O>gj
 
-" delete to your signature
+" unfold and delete to your signature
 noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR>
 
 
