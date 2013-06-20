@@ -19,6 +19,15 @@ set undofile "tells Vim to create <FILENAME>.un~ files whenever you edit a file.
 set undodir=~/.vim/undo
 "set directory=~/.vim/swaps
 
+"let me copy/paste from any vim instance to any other app
+set clipboard=unnamed
+
+"UTF-8 everywhere
+set fileencoding=utf-8
+
+" save the file when you lose focus
+au FocusLost * :wa
+
 if has('gui_running') 
     color solarized 
 else 
@@ -34,12 +43,6 @@ endif
 "set rtp+=~/.vim/bundle/powerline/bindings/vim
 
 let g:Powerline_symbols = 'fancy'
-
-"let me copy/paste from any vim instance to any other app
-"set clipboard=unnamed
-
-"UTF-8 everywhere
-set fileencoding=utf-8
 
 
 " adding line breaking:
@@ -66,6 +69,27 @@ map <F12> <Esc>:setlocal nospell<CR>
 "autocmd BufEnter *fr.* !aspell --encoding=utf-8 --lang fr-fr -c  
 "autocmd BufEnter *en.* !aspell --encoding=utf-8 --lang en-gb -c 
 
+" Reselect visual block after indent/outdent 
+vnoremap < <gv
+vnoremap > >gv
+
+" make arrows behave like gui text editor
+noremap <up> gk
+noremap <down> gj
+
+" delete to your signature
+map ,dd :.;/^-- $/d<CR>O-- <UP><End><CR>
+
+
+" vim gets back to where the pointer was
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+
+" https://bitbucket.org/joedicastro/vim-markdown-extra-preview/overview
+let g:VMEPextensions = ['extra', 'meta']
+let g:VMEPtemplate = 'hugo.html'
+let g:VMEPstylesheet = 'hugo.css'
+
 " abbreviations
 
 iab courcass Cour de cassation
@@ -75,6 +99,9 @@ iab OEBB Office européen des brevets
 iab courdapp Cour d'appel
 iab DII dommages et intérêts
 iab USAA États-Unis
+
+" utf8
+
 iab I. Ⅰ
 iab II. Ⅱ
 iab III. Ⅲ
@@ -87,16 +114,14 @@ iab IX. Ⅸ
 iab X. Ⅹ
 iab XI. Ⅺ
 iab XII. Ⅻ
-
-
-" vim gets back to where the pointer was
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" save the file when you lose focus
-au FocusLost * :wa
-
-" https://bitbucket.org/joedicastro/vim-markdown-extra-preview/overview
-let g:VMEPextensions = ['extra', 'meta']
-let g:VMEPtemplate = 'hugo.html'
-let g:VMEPstylesheet = 'hugo.css'
-
+iab XIII. ⅩⅢ
+iab XIV. ⅩⅣ
+iab XV. ⅩⅤ
+iab XVI. ⅩⅥ
+iab L. Ⅼ
+iab C. Ⅽ
+iab D. Ⅾ
+iab M. Ⅿ
+iab :-) ☺
+iab :-( ☹
+iab <3 ♥
