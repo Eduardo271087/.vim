@@ -76,8 +76,8 @@ vnoremap > >gv
 " make arrows behave like gui text editor
 nnoremap <up> gk
 nnoremap <down> gj
-inoremap <up> <Esc>g<up>i
-inoremap <down> <Esc>g<down>i
+inoremap <up> <C-O>gk
+inoremap <down> <C-O>gj
 
 " delete to your signature
 noremap ,dd :.;/^-- $/d<CR>O-- <UP><End><CR>
