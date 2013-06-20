@@ -80,7 +80,7 @@ inoremap <up> <C-O>gk
 inoremap <down> <C-O>gj
 
 " delete to your signature
-noremap ,dd :.;/^-- $/d<CR>O-- <UP><End><CR>
+noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR>
 
 
 " vim gets back to where the pointer was
@@ -99,7 +99,7 @@ iab consdeta Conseil d'État
 iab conscons Conseil constitutionnel
 iab OEBB Office européen des brevets
 iab courdapp Cour d'appel
-iab DII dommages et intérêts
+iab DII dommages & intérêts
 iab USAA États-Unis
 
 " utf8
