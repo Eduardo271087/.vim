@@ -74,11 +74,13 @@ vnoremap < <gv
 vnoremap > >gv
 
 " make arrows behave like gui text editor
-noremap <up> gk
-noremap <down> gj
+nnoremap <up> gk
+nnoremap <down> gj
+inoremap <up> <Esc>g<up>i
+inoremap <down> <Esc>g<down>i
 
 " delete to your signature
-map ,dd :.;/^-- $/d<CR>O-- <UP><End><CR>
+noremap ,dd :.;/^-- $/d<CR>O-- <UP><End><CR>
 
 
 " vim gets back to where the pointer was
