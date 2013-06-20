@@ -80,7 +80,7 @@ inoremap <up> <C-O>gk
 inoremap <down> <C-O>gj
 
 " unfold and delete to your signature
-noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR>
+noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR><CR><UP><CR><C-O>zi
 
 
 " vim gets back to where the pointer was
