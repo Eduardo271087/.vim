@@ -50,6 +50,10 @@ autocmd BufEnter *.md set textwidth=66	" to make lines breaks after n char
 autocmd BufEnter /tmp/mutt/* set textwidth=66
 autocmd BufEnter ~/.mutt/tmp/* set textwidth=66
 
+" some more fileformats handling
+autocmd BufEnter *.muttrc set filetype=muttrc
+autocmd BufEnter *.less set filetype=css
+
 " tabs and indents
 set expandtab " conversion des tabulations en espaces
 set shiftwidth=4
