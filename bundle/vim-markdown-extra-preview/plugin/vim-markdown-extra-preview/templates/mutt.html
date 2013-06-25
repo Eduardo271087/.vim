@@ -1,3 +1,13 @@
+
+<!DOCTYPE html
+ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+  <style type="text/css">
 @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700&subset=latin,latin-ext);
 
 body {
@@ -5,7 +15,7 @@ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYBAMAAACDu
 }
 
 #container {
-        width: 500px;
+        width: 700px;
         font-size:12pt;
         margin: 3em auto;
 }
@@ -35,3 +45,21 @@ blockquote {
     border-left: 4px solid #ddd;
     padding-left: 1em;
 }
+  </style>
+
+  <title>%(name)s</title>
+  </head>
+  <body lang="fr">
+
+    <div id="container">
+      <div id="centered">
+        <div id="article">
+          <div class="page"> 
+          %(content)s
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
