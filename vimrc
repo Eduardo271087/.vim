@@ -83,6 +83,9 @@ nnoremap <down> gj
 inoremap <up> <C-O>gk
 inoremap <down> <C-O>gj
 
+" save
+"inoremap <C-S> <C-O>:w
+
 " unfold and delete to your signature
 noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR><CR><UP><CR><C-O>zi
 
@@ -94,7 +97,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " https://bitbucket.org/joedicastro/vim-markdown-extra-preview/overview
 let g:VMEPextensions = ['extra', 'meta']
 let g:VMEPtemplate = 'hugo.html'
-let g:VMEPstylesheet = 'hugo.css'
+"let g:VMEPstylesheet = 'hugo.css'
+au BufEnter /tmp/mutt/* let  g:VMEPtemplate = 'mutt.html'
+au BufEnter ~/.mutt/tmp/* let  g:VMEPtemplate = 'mutt.html'
+
 
 " abbreviations
 
@@ -124,10 +130,10 @@ iab XIII. ⅩⅢ
 iab XIV. ⅩⅣ
 iab XV. ⅩⅤ
 iab XVI. ⅩⅥ
-iab L. Ⅼ
-iab C. Ⅽ
-iab D. Ⅾ
-iab M. Ⅿ
+iab LL. Ⅼ
+iab CC. Ⅽ
+iab DD. Ⅾ
+iab MM. Ⅿ
 iab :-) ☺
 iab :-( ☹
 iab <3 ♥
