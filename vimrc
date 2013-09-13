@@ -153,7 +153,7 @@ iab :-D 😃
 iab :-3 😍
 iab ^^ 😊
 iab :-( ☹
-iab X-0 😵
+iab :-O 😵
 iab :-/ 😏
 iab :-P 😋
 iab :-S 😖
