@@ -1,21 +1,21 @@
 " Easy manipulation of runtime, path, tags, etc 
 execute pathogen#infect() 
-syntax on " syntax highlighting
 filetype plugin indent on
 
-set nocompatible
+set nocompatible   " i don't care about vi legacy
 
-set nu " line numbers
-set lbr " line breaking - line wraps
-set guifont=Inconsolata\ Medium\ 14 " font
-set mouse=a " pointer support
-set scrolloff=3 " set number of line to show
+syntax on          " syntax highlighting
+set nu             " line numbers
+set lbr            " line breaking - line wraps
+set guifont=Inconsolata\ Medium\ 14 
+set mouse=a        " pointer support
+set scrolloff=3    " set number of line to show
 set cursorline
 set ruler
 set colorcolumn=90
 set laststatus=2
 set backspace=indent,eol,start " retours arrières intelligents
-set undofile "tells Vim to create <FILENAME>.un~ files whenever you edit a file. These files contain undo information so you can undo previous actions even after you close and reopen a file
+set undofile       "tells Vim to create <FILENAME>.un~ files whenever you edit a file. These files contain undo information so you can undo previous actions even after you close and reopen a file
 set undodir=~/.vim/undo
 "set directory=~/.vim/swaps
 
@@ -25,8 +25,18 @@ set clipboard=unnamed
 "UTF-8 everywhere
 set fileencoding=utf-8
 
-" save the file when you lose focus
-au FocusLost * :wa
+" tabs and indents
+set expandtab      " conversion des tabulations en espaces
+set shiftwidth=4   " a tab is four spaces
+set softtabstop=4
+set autoindent	   " always set autoindenting on
+
+" searching
+set hlsearch       " highlight matches
+set incsearch      " incremental searching
+set ignorecase     " searches are case insensitive...
+set smartcase      " ... unless they contain at least one capital letter
+
 
 if has('gui_running') 
     color solarized 
@@ -41,7 +51,6 @@ endif
 
 "python from powerline.bindings.vim import source_plugin; source_plugin()
 "set rtp+=~/.vim/bundle/powerline/bindings/vim
-
 let g:Powerline_symbols = 'fancy'
 
 
@@ -53,12 +62,13 @@ autocmd BufEnter ~/.mutt/tmp/* set textwidth=66
 " some more fileformats handling
 autocmd BufEnter *.muttrc set filetype=muttrc
 autocmd BufEnter *.less set filetype=css
+autocmd BufEnter *.rss set filetype=xml
 
-" tabs and indents
-set expandtab " conversion des tabulations en espaces
-set shiftwidth=4
-set softtabstop=4
-set autoindent	" always set autoindenting on
+" save the file when you lose focus
+au FocusLost * :wa
+
+" vim gets back to where the pointer was
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " spell checking:
 map <silent> <F7> <Esc>:silent setlocal spl=fr spell<CR>
@@ -73,6 +83,9 @@ map <F12> <Esc>:setlocal nospell<CR>
 "autocmd BufEnter *fr.* !aspell --encoding=utf-8 --lang fr-fr -c  
 "autocmd BufEnter *en.* !aspell --encoding=utf-8 --lang en-gb -c 
 
+"remap jj to escape key
+inoremap jj <Esc>
+
 " Reselect visual block after indent/outdent 
 vnoremap < <gv
 vnoremap > >gv
@@ -82,16 +95,16 @@ nnoremap <up> gk
 nnoremap <down> gj
 inoremap <up> <C-O>gk
 inoremap <down> <C-O>gj
+vnoremap <up> gk
+vnoremap <down> gj
+
 
 " save
 "inoremap <C-S> <C-O>:w
 
-" unfold and delete to your signature
+" for email:  unfold and delete to your signature
 noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR><CR><UP><CR><C-O>zi
 
-
-" vim gets back to where the pointer was
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
 " https://bitbucket.org/joedicastro/vim-markdown-extra-preview/overview
@@ -103,37 +116,47 @@ au BufEnter ~/.mutt/tmp/* let  g:VMEPtemplate = 'mutt.html'
 
 
 " abbreviations
-
 iab courcass Cour de cassation
-iab consdeta Conseil d'État
+iab consdeta Conseil d’État
 iab conscons Conseil constitutionnel
 iab OEBB Office européen des brevets
-iab courdapp Cour d'appel
-iab DII dommages & intérêts
+iab courdapp Cour d’appel
+iab DII dommages-intérêts
 iab USAA États-Unis
+iab gavv garde à vue
+
 
 " utf8
-
 iab I. Ⅰ
 iab II. Ⅱ
 iab III. Ⅲ
 iab IV. Ⅳ
-iab V. Ⅴ
+iab vV. Ⅴ
 iab VI. Ⅵ
 iab VII. Ⅶ
 iab VIII.  Ⅷ
 iab IX. Ⅸ
-iab X. Ⅹ
+iab xX. Ⅹ
 iab XI. Ⅺ
 iab XII. Ⅻ
 iab XIII. ⅩⅢ
 iab XIV. ⅩⅣ
 iab XV. ⅩⅤ
 iab XVI. ⅩⅥ
-iab LL. Ⅼ
-iab CC. Ⅽ
-iab DD. Ⅾ
-iab MM. Ⅿ
+iab lL. Ⅼ
+iab cC. Ⅽ
+iab dD. Ⅾ
+iab mM. Ⅿ
 iab :-) ☺
+iab :)) ☻
+iab :-D 😃
+iab :-3 😍
+iab ^^ 😊
 iab :-( ☹
+iab X-0 😵
+iab :-/ 😏
+iab :-P 😋
+iab :-S 😖
+iab cofffee ☕
 iab <3 ♥
+iab §! ¶
