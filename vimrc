@@ -38,11 +38,11 @@ set ignorecase     " searches are case insensitive...
 set smartcase      " ... unless they contain at least one capital letter
 
 
-if has('gui_running') 
-    color solarized 
-else 
+"if has('gui_running') 
+"    color solarized 
+"else 
     color molokai
-endif
+"endif
 
 "if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
     set t_Co=256
@@ -56,6 +56,7 @@ let g:Powerline_symbols = 'fancy'
 
 " adding line breaking:
 autocmd BufEnter *.md set textwidth=66	" to make lines breaks after n char
+autocmd BufEnter *.mdwn set textwidth=66	" to make lines breaks after n char
 autocmd BufEnter /tmp/mutt/* set textwidth=66
 autocmd BufEnter ~/.mutt/tmp/* set textwidth=66
 
@@ -125,6 +126,8 @@ iab DII dommages-intérêts
 iab USAA États-Unis
 iab gavv garde à vue
 
+" shortcuts
+iab <expr> DATEE strftime("%FT%T%z")  
 
 " utf8
 iab I. Ⅰ
