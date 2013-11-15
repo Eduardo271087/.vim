@@ -1,4 +1,5 @@
 " Easy manipulation of runtime, path, tags, etc 
+" https://github.com/tpope/vim-pathogen/ 
 execute pathogen#infect() 
 filetype plugin indent on
 
@@ -37,12 +38,7 @@ set incsearch      " incremental searching
 set ignorecase     " searches are case insensitive...
 set smartcase      " ... unless they contain at least one capital letter
 
-
-"if has('gui_running') 
-"    color solarized 
-"else 
-    color molokai
-"endif
+color molokai
 
 "if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
     set t_Co=256
