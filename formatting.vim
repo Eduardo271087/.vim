@@ -13,5 +13,5 @@ autocmd BufEnter *.less set filetype=css
 autocmd BufEnter *.rss set filetype=xml
 
 " for email:  unfold and delete to your signature
-noremap ,dd zi:.;/^-- $/d<CR>O-- <UP><End><CR><CR><UP><CR><C-O>zi
-
+noremap ,dd zi:.;/^-- Hugo Roy  $/d<CR>O<Home>-- Hugo Roy  <UP><End><CR><CR><UP><CR><C-O>zi
+"noremap ,dd :.;/^-- $/dO-- 
