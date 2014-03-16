@@ -3,14 +3,15 @@ filetype plugin indent on
 
 syntax on          " syntax highlighting
 set nu             " line numbers
-set lbr            " line breaking - line wraps
+set wrap lbr nolist  " line breaking - line wraps
 set mouse=a        " pointer support
 set scrolloff=3    " set number of line to show
 set cursorline
 set ruler
-set colorcolumn=90
 set laststatus=2
 set backspace=indent,eol,start " retours arrières intelligents
+set ttyfast
+set shell=/bin/zsh
 
 " tabs and indents
 set expandtab      " conversion des tabulations en espaces
