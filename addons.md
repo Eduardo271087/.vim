@@ -1,6 +1,7 @@
 # List of Vim addons and bundles, etc.
 
 bundle/git-vim
+bundle/gundo
 bundle/tabular
 bundle/vim-colors-solarized
 bundle/vim-json
