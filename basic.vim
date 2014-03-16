@@ -10,7 +10,7 @@ set undodir=~/.vim/undo
 "set directory=~/.vim/swaps
 
 "let me copy/paste from any vim instance to any other app
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 "UTF-8 everywhere
 set fileencoding=utf-8
